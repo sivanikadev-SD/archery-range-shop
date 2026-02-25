@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Archery Range & Pro Shop</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%237a1f1f%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><circle cx=%2212%22 cy=%2212%22 r=%226%22/><circle cx=%2212%22 cy=%2212%22 r=%222%22/></svg>">
+    <!-- CSS & Tailwind -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7a1f1f', secondary: '#1f2933', accent: '#f59e0b',
+                        bg: { light: '#ffffff', dark: '#0f172a' },
+                        text: { light: '#111827', dark: '#e5e7eb' }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark transition-colors duration-300 overflow-x-hidden">
+    <!-- Navbar (Same as others) -->
+    <nav
+        class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i data-lucide="target" class="w-8 h-8 text-primary dark:text-red-500"></i>
+                        <span class="font-heading font-bold text-xl tracking-tight">ArcheryPro</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6 rtl:space-x-reverse items-center">
+                    <div class="relative group px-3 py-2">
+                        <button
+                            class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                            Home <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true"
+                                class="lucide lucide-chevron-down w-4 h-4">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
+                            <a href="index.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">Classic
+                                Style</a>
+                            <a href="home2.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">Modern
+                                SaaS</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="hover:text-primary transition">About</a>
+                    <a href="services.html" class="hover:text-primary transition">Services</a>
+                    <a href="leagues.html" class="hover:text-primary transition">Leagues</a>
+                    <a href="shop.html" class="hover:text-primary transition">Pro Shop</a>
+                    <a href="blog.html" class="hover:text-primary transition">Blog</a>
+                    <a href="contact.html" class="hover:text-primary transition active">Contact</a>
+                    <a href="dashboard-admin.html"
+                        class="hover:text-primary transition font-semibold text-gray-600 dark:text-gray-300 border-l border-gray-200 dark:border-gray-700 pl-6 rtl:pl-0 rtl:pr-6 rtl:border-l-0 rtl:border-r">Dashboard</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="theme-toggle"
+                        class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="dir-toggle"
+                        class="dir-toggle-btn p-2 text-sm font-medium border rounded hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition">LTR</button>
+                    <a href="login.html"
+                        class="px-5 py-2 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition">Login</a>
+                    <a href="register.html"
+                        class="px-5 py-2 rounded-full bg-primary text-white font-bold hover:bg-red-800 transition shadow-lg shadow-red-900/20">Join
+                        Now</a>
+                </div>
+                <div class="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="theme-toggle-mobile"
+                        class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition md:hidden">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-200">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white dark:bg-gray-900 z-50 flex flex-col p-6 space-y-4 overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-heading font-bold text-xl">Menu</span>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="dir-toggle-btn p-2 text-sm font-medium border rounded hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition">LTR</button>
+                    <button id="close-menu-btn"><i data-lucide="x" class="w-7 h-7"></i></button>
+                </div>
+            </div>
+            <a href="index.html" class="text-lg font-medium">Home</a>
+            <a href="home2.html" class="text-lg font-medium">Home 2</a>
+            <a href="dashboard-admin.html" class="text-lg font-medium text-primary">Dashboard</a>
+            <a href="about.html" class="text-lg font-medium">About</a>
+            <a href="services.html" class="text-lg font-medium">Services</a>
+            <a href="leagues.html" class="text-lg font-medium">Leagues</a>
+            <a href="shop.html" class="text-lg font-medium">Pro Shop</a>
+            <a href="blog.html" class="text-lg font-medium">Blog</a>
+            <a href="contact.html" class="text-lg font-medium active">Contact</a>
+            <hr class="border-gray-200 dark:border-gray-800 my-2">
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <a href="login.html"
+                    class="px-5 py-3 text-center rounded border border-primary text-primary font-bold">Login</a>
+                <a href="register.html"
+                    class="px-5 py-3 text-center rounded bg-primary text-white font-bold">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gray-900 py-20 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="assets/image/blog1.jfif" class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center" data-aos="zoom-in">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white">Get in Touch</h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">We'd love to hear from you. Visit us, call us, or send a
+                message.</p>
+        </div>
+    </header>
+
+    <!-- Info Cards -->
+    <section class="py-20 -mt-32 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl text-center" data-aos="fade-up">
+                    <div
+                        class="w-16 h-16 bg-red-100 dark:bg-red-900/30 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="map-pin" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Visit Us</h3>
+                    <p class="text-gray-500">123 Archery Lane<br>Bowtown, ST 12345</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl text-center" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div
+                        class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="phone" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Call Us</h3>
+                    <p class="text-gray-500">Mon-Fri from 9am to 9pm<br>+1 (555) 123-4567</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl text-center" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div
+                        class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Email Us</h3>
+                    <p class="text-gray-500">General Inquiries<br>hello@archerypro.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Form -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Map (NEW) -->
+            <div class="rounded-2xl overflow-hidden shadow-lg h-[500px]" data-aos="fade-right">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158857.7281065733!2d-0.2416801948480302!3d51.5287718408761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v1714570000000!5m2!1sen!2sus"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Form -->
+            <div data-aos="fade-left">
+                <h2 class="text-3xl font-heading font-bold mb-6">Send us a Message</h2>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:outline-none transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Subject</label>
+                        <select
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:outline-none transition">
+                            <option>General Inquiry</option>
+                            <option>Membership</option>
+                            <option>League Registration</option>
+                            <option>Pro Shop</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="5"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:outline-none transition"></textarea>
+                    </div>
+                    <button
+                        class="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-red-800 transition">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extended FAQ (NEW) -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-heading font-bold text-center mb-12" data-aos="fade-up">Frequently Asked Questions
+            </h2>
+            <div class="space-y-4" data-aos="fade-up">
+                <details
+                    class="group bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm cursor-pointer border border-gray-100 dark:border-gray-700">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none">
+                        <span>Do I need my own equipment?</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down"
+                                class="w-5 h-5"></i></span>
+                    </summary>
+                    <div class="text-gray-500 mt-4 leading-relaxed group-open:animate-fadeIn">
+                        No! We offer high-quality recurve and compound bow rentals for all ages and sizes. First-time
+                        rentals include arm guards and finger tabs.
+                    </div>
+                </details>
+                <details
+                    class="group bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm cursor-pointer border border-gray-100 dark:border-gray-700">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none">
+                        <span>Is there an age limit?</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down"
+                                class="w-5 h-5"></i></span>
+                    </summary>
+                    <div class="text-gray-500 mt-4 leading-relaxed group-open:animate-fadeIn">
+                        We welcome archers aged 8 and up. Minors under 16 must be accompanied by a guardian. We have
+                        specific youth leagues and lightweight bows for younger archers.
+                    </div>
+                </details>
+                <details
+                    class="group bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm cursor-pointer border border-gray-100 dark:border-gray-700">
+                    <summary class="flex justify-between items-center font-bold text-lg list-none">
+                        <span>Do you offer private lessons?</span>
+                        <span class="transition group-open:rotate-180"><i data-lucide="chevron-down"
+                                class="w-5 h-5"></i></span>
+                    </summary>
+                    <div class="text-gray-500 mt-4 leading-relaxed group-open:animate-fadeIn">
+                        Yes, we have certified Level 3 & 4 coaches available for private 1-on-1 sessions. Rates start at
+                        $60/hr. Book via the Services page or call us.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <a href="index.html" class="flex items-center gap-2 mb-4 text-white">
+                    <i data-lucide="target" class="w-6 h-6"></i>
+                    <span class="font-heading font-bold text-lg">ArcheryPro</span>
+                </a>
+                <p class="text-sm mb-4">
+                    Premier archery destination providing top-tier facilities, coaching, and equipment since 2024.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                    <li><a href="leagues.html" class="hover:text-white transition">Leagues</a></li>
+                    <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Newsletter</h4>
+                <p class="text-xs mb-4">Subscribe to receive updates and exclusive offers.</p>
+                <form class="flex flex-col gap-2">
+                    <input type="email" placeholder="Enter your email"
+                        class="bg-gray-800 border border-gray-700 text-white px-4 py-2 rounded focus:outline-none focus:border-primary transition">
+                    <button
+                        class="bg-primary text-white px-4 py-2 rounded hover:bg-red-800 transition font-medium">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+            &copy; 2026 ArcheryPro. All rights reserved by sivanika.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

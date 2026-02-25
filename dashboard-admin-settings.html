@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Archery Admin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7a1f1f', secondary: '#1f2933', accent: '#f59e0b',
+                        bg: { light: '#f3f4f6', dark: '#0f172a' },
+                        text: { light: '#111827', dark: '#e5e7eb' }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark transition-colors duration-300">
+
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="fixed z-30 inset-y-0 start-0 w-64 bg-secondary text-white border-e border-gray-800 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 rtl:translate-x-full lg:rtl:translate-x-0">
+            <div class="flex items-center justify-center h-16 border-b border-gray-700 bg-secondary">
+                <a href="index.html" class="flex items-center gap-2">
+                    <i data-lucide="target" class="w-8 h-8 text-accent"></i>
+                    <span class="font-bold text-xl">ArcheryAdmin</span>
+                </a>
+            </div>
+            <nav class="p-4 space-y-1">
+                <a href="dashboard-admin.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-lg transition">
+                    <i data-lucide="layout-dashboard" class="w-5 h-5"></i> Overview
+                </a>
+                <a href="dashboard-admin-bookings.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-lg transition">
+                    <i data-lucide="calendar" class="w-5 h-5"></i> Bookings
+                </a>
+                <a href="dashboard-admin-lanes.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-lg transition">
+                    <i data-lucide="crosshair" class="w-5 h-5"></i> Lanes
+                </a>
+                <a href="dashboard-admin-members.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-lg transition">
+                    <i data-lucide="users" class="w-5 h-5"></i> Members
+                </a>
+                <a href="dashboard-admin-inventory.html"
+                    class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-lg transition">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i> Inventory
+                </a>
+                <a href="dashboard-admin-settings.html"
+                    class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-lg transition">
+                    <i data-lucide="settings" class="w-5 h-5"></i> Settings
+                </a>
+                <button onclick="logout()"
+                    class="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-white/10 rounded-lg transition mt-8 text-left">
+                    <i data-lucide="log-out" class="w-5 h-5"></i> Logout
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col min-w-0 overflow-hidden lg:ps-64">
+            <!-- Top Header -->
+            <header
+                class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 h-16 flex items-center justify-between px-4 sm:px-6">
+                <button id="sidebar-toggle" class="lg:hidden text-gray-500 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <div class="flex items-center gap-4 ms-auto">
+                    <button id="theme-toggle"
+                        class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="dir-toggle"
+                        class="dir-toggle-btn text-sm font-bold border px-2 py-1 rounded">LTR</button>
+                    <span class="font-medium text-sm">Admin User</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+                <h1 class="text-2xl font-bold mb-6">System Settings</h1>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div
+                        class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                        <h2 class="text-lg font-bold mb-4">General Settings</h2>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Range Name</label>
+                                <input type="text" value="ArcheryPro Range"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-900 focus:ring-2 focus:ring-primary focus:outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Contact Email</label>
+                                <input type="email" value="admin@archerypro.com"
+                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-900 focus:ring-2 focus:ring-primary focus:outline-none transition">
+                            </div>
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-red-800 transition">Save
+                                Changes</button>
+                        </form>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                        <h2 class="text-lg font-bold mb-4">Operations Config</h2>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span>Maintenance Mode</span>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer">
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Allow New Registrations</span>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" class="sr-only peer" checked>
+                                    <div
+                                        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay Mobile -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-20 hidden lg:hidden"></div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

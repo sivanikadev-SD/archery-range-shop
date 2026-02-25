@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Archery Range & Pro Shop</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%237a1f1f%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><circle cx=%2212%22 cy=%2212%22 r=%226%22/><circle cx=%2212%22 cy=%2212%22 r=%222%22/></svg>">
+
+    <!-- CSS & Tailwind -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7a1f1f', secondary: '#1f2933', accent: '#f59e0b',
+                        bg: { light: '#ffffff', dark: '#0f172a' },
+                        text: { light: '#111827', dark: '#e5e7eb' }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i data-lucide="target" class="w-8 h-8 text-primary dark:text-red-500"></i>
+                        <span class="font-heading font-bold text-xl tracking-tight">ArcheryPro</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6 rtl:space-x-reverse items-center">
+                    <div class="relative group px-3 py-2">
+                        <button
+                            class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                            Home <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true"
+                                class="lucide lucide-chevron-down w-4 h-4">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
+                            <a href="index.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">Classic
+                                Style</a>
+                            <a href="home2.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">Modern
+                                SaaS</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="hover:text-primary transition active">About</a>
+                    <a href="services.html" class="hover:text-primary transition">Services</a>
+                    <a href="leagues.html" class="hover:text-primary transition">Leagues</a>
+                    <a href="shop.html" class="hover:text-primary transition">Pro Shop</a>
+                    <a href="blog.html" class="hover:text-primary transition">Blog</a>
+                    <a href="contact.html" class="hover:text-primary transition">Contact</a>
+                    <a href="dashboard-admin.html"
+                        class="hover:text-primary transition font-semibold text-gray-600 dark:text-gray-300 border-l border-gray-200 dark:border-gray-700 pl-6 rtl:pl-0 rtl:pr-6 rtl:border-l-0 rtl:border-r">Dashboard</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="theme-toggle"
+                        class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="dir-toggle"
+                        class="dir-toggle-btn p-2 text-sm font-medium border rounded hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition">LTR</button>
+                    <a href="login.html"
+                        class="px-5 py-2 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition">Login</a>
+                    <a href="register.html"
+                        class="px-5 py-2 rounded-full bg-primary text-white font-bold hover:bg-red-800 transition shadow-lg shadow-red-900/20">Join
+                        Now</a>
+                </div>
+                <div class="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="theme-toggle-mobile"
+                        class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition md:hidden">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-200">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white dark:bg-gray-900 z-50 flex flex-col p-6 space-y-4 overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-heading font-bold text-xl">Menu</span>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="dir-toggle-btn p-2 text-sm font-medium border rounded hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition">LTR</button>
+                    <button id="close-menu-btn"><i data-lucide="x" class="w-7 h-7"></i></button>
+                </div>
+            </div>
+            <a href="index.html" class="text-lg font-medium">Home</a>
+            <a href="home2.html" class="text-lg font-medium">Home 2</a>
+            <a href="dashboard-admin.html" class="text-lg font-medium text-primary">Dashboard</a>
+            <a href="about.html" class="text-lg font-medium active">About</a>
+            <a href="services.html" class="text-lg font-medium">Services</a>
+            <a href="leagues.html" class="text-lg font-medium">Leagues</a>
+            <a href="shop.html" class="text-lg font-medium">Pro Shop</a>
+            <a href="blog.html" class="text-lg font-medium">Blog</a>
+            <a href="contact.html" class="text-lg font-medium">Contact</a>
+            <hr class="border-gray-200 dark:border-gray-800 my-2">
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <a href="login.html"
+                    class="px-5 py-3 text-center rounded border border-primary text-primary font-bold">Login</a>
+                <a href="register.html"
+                    class="px-5 py-3 text-center rounded bg-primary text-white font-bold">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-gray-900 py-24 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="assets/image/arrow-flying-at-a-target.jpg" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white">About Our Range</h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+                Founded in 2024, ArcheryPro is dedicated to promoting the sport of archery through community, education,
+                and excellence.
+            </p>
+        </div>
+    </header>
+
+    <!-- Story Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <img src="assets/image/2018IndoorNats-Sunday-7am-HiRes-100.jpg" alt="Archery Range Interior"
+                    class="rounded-2xl shadow-xl w-full h-96 object-cover transform hover:scale-105 transition duration-500">
+            </div>
+            <div data-aos="fade-left">
+                <h2 class="text-3xl font-heading font-bold mb-6">Our Story</h2>
+                <div class="space-y-4 text-gray-600 dark:text-gray-400">
+                    <p>
+                        It started with a simple passion for the bow. What began as a small club in a garage has grown
+                        into the region's premier archery facility.
+                    </p>
+                    <p>
+                        Our mission is to provide a safe, welcoming, and professional environment for archers of all
+                        ages and skill levels. Whether you are aiming for Olympic gold or just looking for a fun weekend
+                        activity, we are here to support your journey.
+                    </p>
+                    <p>
+                        We host national competitions, offer certified coaching, and maintain a fully stocked pro shop
+                        with the latest gear from Hoyt, Mathews, and Win&Win.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-heading font-bold">Our Core Values</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="100">
+                    <div
+                        class="bg-white text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        1</div>
+                    <h3 class="text-xl font-bold mb-2">Safety First</h3>
+                    <p class="text-red-100">We adhere to the strictest safety protocols to ensure a secure environment
+                        for everyone.</p>
+                </div>
+                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="200">
+                    <div
+                        class="bg-white text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        2</div>
+                    <h3 class="text-xl font-bold mb-2">Community</h3>
+                    <p class="text-red-100">Building a supportive and inclusive family of archers where everyone
+                        belongs.</p>
+                </div>
+                <div class="p-6 bg-white/10 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="300">
+                    <div
+                        class="bg-white text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                        3</div>
+                    <h3 class="text-xl font-bold mb-2">Excellence</h3>
+                    <p class="text-red-100">Striving for the highest standards in coaching, facilities, and
+                        sportsmanship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Timeline -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-heading font-bold text-center mb-12" data-aos="fade-up">Our Journey</h2>
+            <div
+                class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-300 before:to-transparent">
+
+                <!-- Timeline Item 1 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-primary text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="flag" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-900 p-6 rounded-xl shadow border border-gray-100 dark:border-gray-700"
+                        data-aos="fade-left">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">Foundation</div>
+                            <time class="font-caveat font-medium text-primary">2020</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-gray-400">Opened our first small 5-lane range in the
+                            industrial district.</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-primary text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="trophy" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-900 p-6 rounded-xl shadow border border-gray-100 dark:border-gray-700"
+                        data-aos="fade-right">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">Recognition</div>
+                            <time class="font-caveat font-medium text-primary">2022</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-gray-400">Awarded "Best Sports Facility" by the City
+                            Council. Hosted first regional tournament.</div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div
+                    class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div
+                        class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-primary text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="scaling" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-gray-900 p-6 rounded-xl shadow border border-gray-100 dark:border-gray-700"
+                        data-aos="fade-left">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900 dark:text-white">Expansion</div>
+                            <time class="font-caveat font-medium text-primary">2024</time>
+                        </div>
+                        <div class="text-slate-500 dark:text-gray-400">Moved to our current 20-lane facility with pro
+                            shop and automated targets.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-heading font-bold mb-12 text-center" data-aos="fade-up">Meet the Coaches</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Coach 1 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg relative">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop"
+                            alt="Coach Sarah"
+                            class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-bold">Sarah Jenkins</h3>
+                    <p class="text-primary text-sm font-medium mb-2">Head Instructor</p>
+                    <p class="text-gray-500 text-sm">Olympic Silver Medalist with 15 years of coaching experience.</p>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg relative">
+                        <img src="assets/image/download.jfif" alt="Coach Sarah"
+                            class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-bold">Sam Siva</h3>
+                    <p class="text-primary text-sm font-medium mb-2">Instructor</p>
+                    <p class="text-gray-500 text-sm"> with 10 years of coaching experience.</p>
+                </div>
+
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg relative">
+                        <img src="assets/image/women.jpg" alt="Coach Sarah"
+                            class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-bold">Minika</h3>
+                    <p class="text-primary text-sm font-medium mb-2">Instructor</p>
+                    <p class="text-gray-500 text-sm"> with 5 years of coaching experience.</p>
+                </div>
+
+                <!-- Coach 2 -->
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg relative">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop"
+                            alt="Coach Mike"
+                            class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-bold">Mike Ross</h3>
+                    <p class="text-primary text-sm font-medium mb-2">Technical Expert</p>
+                    <p class="text-gray-500 text-sm">Specializes in compound bow tuning and maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer same as index -->
+    <footer class="bg-secondary text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <a href="index.html" class="flex items-center gap-2 mb-4 text-white">
+                    <i data-lucide="target" class="w-6 h-6"></i>
+                    <span class="font-heading font-bold text-lg">ArcheryPro</span>
+                </a>
+                <p class="text-sm mb-4">
+                    Premier archery destination providing top-tier facilities, coaching, and equipment since 2024.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                    <li><a href="leagues.html" class="hover:text-white transition">Leagues</a></li>
+                    <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Newsletter</h4>
+                <p class="text-xs mb-4">Subscribe to receive updates and exclusive offers.</p>
+                <form class="flex flex-col gap-2">
+                    <input type="email" placeholder="Enter your email"
+                        class="bg-gray-800 border border-gray-700 text-white px-4 py-2 rounded focus:outline-none focus:border-primary transition">
+                    <button
+                        class="bg-primary text-white px-4 py-2 rounded hover:bg-red-800 transition font-medium">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+            &copy; 2026 ArcheryPro. All rights reserved by sivanika.
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

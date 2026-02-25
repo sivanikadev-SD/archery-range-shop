@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pro Shop | Archery Range & Pro Shop</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%237a1f1f%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><circle cx=%2212%22 cy=%2212%22 r=%226%22/><circle cx=%2212%22 cy=%2212%22 r=%222%22/></svg>">
+    <!-- CSS & Tailwind -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7a1f1f', secondary: '#1f2933', accent: '#f59e0b',
+                        bg: { light: '#ffffff', dark: '#0f172a' },
+                        text: { light: '#111827', dark: '#e5e7eb' }
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark transition-colors duration-300 overflow-x-hidden">
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i data-lucide="target" class="w-8 h-8 text-primary dark:text-red-500"></i>
+                        <span class="font-heading font-bold text-xl tracking-tight">ArcheryPro</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6 rtl:space-x-reverse items-center">
+                    <div class="relative group px-3 py-2">
+                        <button
+                            class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                            Home <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" data-lucide="chevron-down" aria-hidden="true"
+                                class="lucide lucide-chevron-down w-4 h-4">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 p-1">
+                            <a href="index.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">Classic
+                                Style</a>
+                            <a href="home2.html"
+                                class="block px-4 py-2.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">Modern
+                                SaaS</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="hover:text-primary transition">About</a>
+                    <a href="services.html" class="hover:text-primary transition">Services</a>
+                    <a href="leagues.html" class="hover:text-primary transition">Leagues</a>
+                    <a href="shop.html" class="hover:text-primary transition active">Pro Shop</a>
+                    <a href="blog.html" class="hover:text-primary transition">Blog</a>
+                    <a href="contact.html" class="hover:text-primary transition">Contact</a>
+                    <a href="dashboard-admin.html"
+                        class="hover:text-primary transition font-semibold text-gray-600 dark:text-gray-300 border-l border-gray-200 dark:border-gray-700 pl-6 rtl:pl-0 rtl:pr-6 rtl:border-l-0 rtl:border-r">Dashboard</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="theme-toggle"
+                        class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="dir-toggle"
+                        class="dir-toggle-btn p-2 text-sm font-medium border rounded hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition">LTR</button>
+                    <a href="login.html"
+                        class="px-5 py-2 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition">Login</a>
+                    <a href="register.html"
+                        class="px-5 py-2 rounded-full bg-primary text-white font-bold hover:bg-red-800 transition shadow-lg shadow-red-900/20">Join
+                        Now</a>
+                </div>
+                <div class="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="theme-toggle-mobile"
+                        class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition md:hidden">
+                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-200">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white dark:bg-gray-900 z-50 flex flex-col p-6 space-y-4 overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <span class="font-heading font-bold text-xl">Menu</span>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="dir-toggle-btn p-2 text-sm font-medium border rounded hover:bg-gray-100 dark:border-gray-700 dark:hover:bg-gray-800 transition">LTR</button>
+                    <button id="close-menu-btn"><i data-lucide="x" class="w-7 h-7"></i></button>
+                </div>
+            </div>
+            <a href="index.html" class="text-lg font-medium">Home</a>
+            <a href="home2.html" class="text-lg font-medium">Home 2</a>
+            <a href="dashboard-admin.html" class="text-lg font-medium text-primary">Dashboard</a>
+            <a href="about.html" class="text-lg font-medium">About</a>
+            <a href="services.html" class="text-lg font-medium">Services</a>
+            <a href="leagues.html" class="text-lg font-medium">Leagues</a>
+            <a href="shop.html" class="text-lg font-medium active">Pro Shop</a>
+            <a href="blog.html" class="text-lg font-medium">Blog</a>
+            <a href="contact.html" class="text-lg font-medium">Contact</a>
+            <hr class="border-gray-200 dark:border-gray-800 my-2">
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <a href="login.html"
+                    class="px-5 py-3 text-center rounded border border-primary text-primary font-bold">Login</a>
+                <a href="register.html"
+                    class="px-5 py-3 text-center rounded bg-primary text-white font-bold">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gray-900 py-20 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="assets/image/john-hafner_065-cropped_f4159788da6a13a05c7755e7e3b29890.jpg"
+                class="w-full h-full object-cover opacity-30">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center" data-aos="zoom-in">
+            <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 text-white">Pro Shop</h1>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg">Premium gear for serious archers. Authorized dealer for
+                Hoyt, Mathews, and Easton.</p>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <section class="py-12 bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
+                <button class="px-6 py-2 rounded-full bg-primary text-white font-bold shadow-lg">All Products</button>
+                <button
+                    class="px-6 py-2 rounded-full bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600 transition">Bows</button>
+                <button
+                    class="px-6 py-2 rounded-full bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600 transition">Arrows</button>
+                <button
+                    class="px-6 py-2 rounded-full bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600 transition">Targets</button>
+                <button
+                    class="px-6 py-2 rounded-full bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600 transition">Accessories</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                        <img src="assets/image/bow.jpg"
+                            class="h-full w-full object-cover group-hover:scale-105 transition duration-500" alt="Bow">
+                        <span
+                            class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">SALE</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-1">Recurve Bows</div>
+                        <h3 class="font-bold text-lg mb-2">Olympic Recurve Riser</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$499.00</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i
+                                    data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                        <img src="assets/image/il_fullxfull.6443664229_2y7d.avif"
+                            class="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Arrows">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-1">Arrows</div>
+                        <h3 class="font-bold text-lg mb-2">Carbon Competition Set (12pk)</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$180.00</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i
+                                    data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                        <img src="assets/image/SR_1100x.webp"
+                            class="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Target">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-1">Targets</div>
+                        <h3 class="font-bold text-lg mb-2">Block Target 18x18</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$85.00</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i
+                                    data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- More Products Row -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <!-- Product 4 -->
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                        <img src="assets/image/back.webp"
+                            class="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Compound Bow">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-1">Compound Bows</div>
+                        <h3 class="font-bold text-lg mb-2">Pro Hunter X1</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$899.00</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i
+                                    data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                        <img src="assets/image/2018IndoorNats-Sunday-7am-HiRes-100.jpg"
+                            class="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Quiver">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-1">Accessories</div>
+                        <h3 class="font-bold text-lg mb-2">Leather Hip Quiver</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$120.00</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i
+                                    data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                        <img src="assets/image/TNTArcheryProShop-9.webp"
+                            class="h-full w-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Sight">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-1">Sights</div>
+                        <h3 class="font-bold text-lg mb-2">Digital Bow Sight</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary">$249.00</span>
+                            <button
+                                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary hover:text-white transition"><i
+                                    data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button
+                    class="px-8 py-3 border border-gray-300 dark:border-gray-600 rounded-full font-bold hover:bg-gray-100 dark:hover:bg-gray-800 transition">Load
+                    More Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Picks (NEW) -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-heading font-bold mb-12" data-aos="fade-up">Staff Picks</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex gap-6 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-sm hover:shadow-md transition items-center"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <img src="assets/image/arrow-flying-at-a-target.jpg" class="w-24 h-24 object-cover rounded-lg"
+                        alt="Pick">
+                    <div>
+                        <span class="text-xs font-bold text-accent uppercase">Coach Sarah's Pick</span>
+                        <h4 class="text-xl font-bold mt-1">Finger Tab Pro</h4>
+                        <p class="text-gray-500 text-sm mt-2 mb-3">"The leather quality is unmatched. Improved my
+                            release consistency instantly."</p>
+                        <a href="#" class="text-primary font-bold text-sm hover:underline">View Product</a>
+                    </div>
+                </div>
+                <div class="flex gap-6 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-sm hover:shadow-md transition items-center"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/image/Indoor+archery+range+at+arizona+archery+club+in+phoenix.webp"
+                        class="w-24 h-24 object-cover rounded-lg" alt="Pick">
+                    <div>
+                        <span class="text-xs font-bold text-accent uppercase">Tech Mike's Pick</span>
+                        <h4 class="text-xl font-bold mt-1">Bow Scale Digital</h4>
+                        <p class="text-gray-500 text-sm mt-2 mb-3">"Essential for any compound shooter tuning their
+                            setup."</p>
+                        <a href="#" class="text-primary font-bold text-sm hover:underline">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Guarantee (NEW) -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-800">
+                <div class="p-4" data-aos="fade-up">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-green-500 mx-auto mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Official Warranty</h3>
+                    <p class="text-gray-500 text-sm">We are authorized dealers for all brands we sell. Full manufacturer
+                        warranty applies.</p>
+                </div>
+                <div class="p-4" data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="wrench" class="w-10 h-10 text-blue-500 mx-auto mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Free Tuning</h3>
+                    <p class="text-gray-500 text-sm">Purchase a bow and we'll set it up and paper tune it for you for
+                        free.</p>
+                </div>
+                <div class="p-4" data-aos="fade-up" data-aos-delay="200">
+                    <i data-lucide="refresh-cw" class="w-10 h-10 text-orange-500 mx-auto mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">30-Day Returns</h3>
+                    <p class="text-gray-500 text-sm">Unused gear can be returned within 30 days. No questions asked.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <a href="index.html" class="flex items-center gap-2 mb-4 text-white">
+                    <i data-lucide="target" class="w-6 h-6"></i>
+                    <span class="font-heading font-bold text-lg">ArcheryPro</span>
+                </a>
+                <p class="text-sm mb-4">
+                    Premier archery destination providing top-tier facilities, coaching, and equipment since 2024.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+                    <li><a href="leagues.html" class="hover:text-white transition">Leagues</a></li>
+                    <li><a href="blog.html" class="hover:text-white transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4">Newsletter</h4>
+                <p class="text-xs mb-4">Subscribe to receive updates and exclusive offers.</p>
+                <form class="flex flex-col gap-2">
+                    <input type="email" placeholder="Enter your email"
+                        class="bg-gray-800 border border-gray-700 text-white px-4 py-2 rounded focus:outline-none focus:border-primary transition">
+                    <button
+                        class="bg-primary text-white px-4 py-2 rounded hover:bg-red-800 transition font-medium">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+            &copy; 2026 ArcheryPro. All rights reserved by sivanika.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

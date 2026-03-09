@@ -64,7 +64,7 @@
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-6 rtl:space-x-reverse items-center">
+                <div class="hidden lg:flex space-x-6 rtl:space-x-reverse items-center">
                     <div class="relative group px-3 py-2">
                         <button
                             class="flex items-center gap-1 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors active">
@@ -96,7 +96,7 @@
                 </div>
 
                 <!-- Actions -->
-                <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+                <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
                     <!-- Theme Toggle -->
                     <button id="theme-toggle"
                         class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
@@ -121,7 +121,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center space-x-4 rtl:space-x-reverse">
+                <div class="lg:hidden flex items-center space-x-4 rtl:space-x-reverse">
                     <button id="theme-toggle-mobile"
                         class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition md:hidden">
                         <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
@@ -136,7 +136,7 @@
 
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu"
-            class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white dark:bg-gray-900 z-50 flex flex-col p-6 space-y-4 overflow-y-auto">
+            class="hidden fixed inset-0 w-full h-screen bg-white dark:bg-gray-900 z-[9999] flex flex-col p-6 space-y-4 overflow-y-auto">
             <div class="flex justify-between items-center mb-4">
                 <span class="font-heading font-bold text-xl">Menu</span>
                 <div class="flex items-center gap-2">
@@ -229,54 +229,54 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
                 <!-- Feature 1 -->
-                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700 group"
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700 group flex flex-col"
                     data-aos="fade-up" data-aos-delay="100">
                     <div
                         class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition duration-300">
                         <i data-lucide="crosshair" class="w-8 h-8"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Modern Lanes</h3>
-                    <p class="text-gray-500 dark:text-gray-400 mb-4">
+                    <p class="text-gray-500 dark:text-gray-400 mb-4 flex-grow">
                         20 indoor lanes with automated target retrieval systems and adjustable distances up to 70m.
                     </p>
                     <a href="services.html"
-                        class="text-primary font-medium hover:underline flex items-center gap-1 rtl:flex-row-reverse group-hover:gap-2 transition-all">
+                        class="text-primary font-medium hover:underline flex items-center gap-1 rtl:flex-row-reverse group-hover:gap-2 transition-all mt-auto">
                         Learn more <i data-lucide="arrow-right" class="w-4 h-4 rtl:rotate-180"></i>
                     </a>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700 group"
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700 group flex flex-col"
                     data-aos="fade-up" data-aos-delay="200">
                     <div
                         class="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition duration-300">
                         <i data-lucide="trophy" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Leagues & Events</h3>
-                    <p class="text-gray-500 dark:text-gray-400 mb-4">
+                    <h3 class="text-xl font-bold mb-3">Leagues &amp; Events</h3>
+                    <p class="text-gray-500 dark:text-gray-400 mb-4 flex-grow">
                         Weekly leagues for all skill levels. Compete, improve your scores, and win exclusive prizes.
                     </p>
                     <a href="leagues.html"
-                        class="text-accent font-medium hover:underline flex items-center gap-1 rtl:flex-row-reverse group-hover:gap-2 transition-all">
+                        class="text-accent font-medium hover:underline flex items-center gap-1 rtl:flex-row-reverse group-hover:gap-2 transition-all mt-auto">
                         Join a League <i data-lucide="arrow-right" class="w-4 h-4 rtl:rotate-180"></i>
                     </a>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700 group"
+                <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-gray-100 dark:border-gray-700 group flex flex-col"
                     data-aos="fade-up" data-aos-delay="300">
                     <div
                         class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition duration-300">
                         <i data-lucide="shopping-bag" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Pro Shop & Rentals</h3>
-                    <p class="text-gray-500 dark:text-gray-400 mb-4">
-                        Rent premium recurve & compound bows or buy your own gear from top brands.
+                    <h3 class="text-xl font-bold mb-3">Pro Shop &amp; Rentals</h3>
+                    <p class="text-gray-500 dark:text-gray-400 mb-4 flex-grow">
+                        Rent premium recurve &amp; compound bows or buy your own gear from top brands.
                     </p>
                     <a href="shop.html"
-                        class="text-blue-600 font-medium hover:underline flex items-center gap-1 rtl:flex-row-reverse group-hover:gap-2 transition-all">
+                        class="text-blue-600 font-medium hover:underline flex items-center gap-1 rtl:flex-row-reverse group-hover:gap-2 transition-all mt-auto">
                         Browse Shop <i data-lucide="arrow-right" class="w-4 h-4 rtl:rotate-180"></i>
                     </a>
                 </div>

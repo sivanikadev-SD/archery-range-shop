@@ -148,3 +148,26 @@ html.dark .text-gray-600 {
   color: #d4d4d8;
   /* zinc-300 */
 }
+
+/* ===== Mobile Responsiveness Fixes ===== */
+@media (max-width: 639px) {
+  /* Compact table cells on mobile */
+  table th,
+  table td {
+    padding: 0.75rem !important;
+    font-size: 0.85rem;
+  }
+
+  /* Prevent text overflow in cards */
+  .line-clamp-2 {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Pricing card: remove the upward translate on mobile so cards don't overlap */
+  .transform.md\:-translate-y-4 {
+    transform: none !important;
+  }
+}
